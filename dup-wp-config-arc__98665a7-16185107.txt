@@ -1,0 +1,166 @@
+<?php
+
+/**
+
+ * WordPress için başlangıç ayar dosyası.
+
+ *
+
+ * Bu dosya kurulum sırasında wp-config.php dosyasının oluşturulabilmesi için
+
+ * kullanılır. İsterseniz bu dosyayı kopyalayıp, ismini "wp-config.php" olarak değiştirip,
+
+ * değerleri girerek de kullanabilirsiniz.
+
+ *
+
+ * Bu dosya şu ayarları içerir:
+
+ * 
+
+ * * MySQL ayarları
+
+ * * Gizli anahtarlar
+
+ * * Veritabanı tablo ön eki
+
+ * * ABSPATH
+
+ * 
+
+ * @link https://wordpress.org/support/article/editing-wp-config-php/
+
+ *
+
+ * @package WordPress
+
+ */
+
+
+// ** MySQL ayarları - Bu bilgileri servis sağlayıcınızdan alabilirsiniz ** //
+
+/** WordPress için kullanılacak veritabanının adı */
+
+define( 'DB_NAME', '' );
+
+
+/** MySQL veritabanı kullanıcısı */
+
+define( 'DB_USER', '' );
+
+
+/** MySQL veritabanı parolası */
+
+define( 'DB_PASSWORD', '' );
+
+
+/** MySQL sunucusu */
+
+define( 'DB_HOST', '' );
+
+
+/** Yaratılacak tablolar için veritabanı karakter seti. */
+
+define( 'DB_CHARSET', 'utf8mb4' );
+
+
+/** Veritabanı karşılaştırma tipi. Herhangi bir şüpheniz varsa bu değeri değiştirmeyin. */
+
+define( 'DB_COLLATE', '' );
+
+
+/**#@+
+
+ * Eşsiz doğrulama anahtarları ve tuzlar.
+
+ *
+
+ * Her anahtar farklı bir karakter kümesi olmalı!
+
+ * {@link http://api.wordpress.org/secret-key/1.1/salt WordPress.org secret-key service} servisini kullanarak yaratabilirsiniz.
+
+ * Çerezleri geçersiz kılmak için istediğiniz zaman bu değerleri değiştirebilirsiniz. Bu tüm kullanıcıların tekrar giriş yapmasını gerektirecektir.
+
+ *
+
+ * @since 2.6.0
+
+ */
+
+define( 'AUTH_KEY',         '_t0dfft;xs~a6 up2`G@pXl;3X`H@CIP.TnOY}fZ+!l.auFzXCo/T!IWKf4Za^zA' );
+
+define( 'SECURE_AUTH_KEY',  '5*#Nu?Q|8O#Zksd!g)W*8wy|wakr&r 5C1qo.5db }E+Cw|n+K-c?Z@z9]E9kjaE' );
+
+define( 'LOGGED_IN_KEY',    ',I5v>?*6bs:W]N-A%6(azt$b|h@1u=jxl>S_WRfOe1L!g1W|8V;v`7?Rk]N8[?Ks' );
+
+define( 'NONCE_KEY',        'o,J]M/C!a>xV}>j7 jI1kl+s=+qb<9S>1gekkgz;Clb sl<j48vl=?(g>pMJQWU)' );
+
+define( 'AUTH_SALT',        '@{zi<6<?B+ n^E%U.Nue&`[(#C-(S^Kq452IpU{;>JH*&jc+|WU,GXZ-Qz<5I`F]' );
+
+define( 'SECURE_AUTH_SALT', 'ViO6(W|X}r7^=t*wq``%Qn81aC^7Hs#U/f6y xo]t|>QJ_u37tMX[E?jQ&/xr9}Z' );
+
+define( 'LOGGED_IN_SALT',   '<n%.>~2|K=l0_6c?a;n@ao-ljFcymw9bXJFQyNX}|3p.o2o62U)j<#De-26?`rSl' );
+
+define( 'NONCE_SALT',       'sKtHy&^pFv>,,MvRYP6sP^0fAi[J7t6I7L$MFXfhS1NK]~a#TAlJb/tSi$fGlw*)' );
+
+
+/**#@-*/
+
+
+/**
+
+ * WordPress veritabanı tablo ön eki.
+
+ *
+
+ * Tüm kurulumlara ayrı bir önek vererek bir veritabanına birden fazla kurulum yapabilirsiniz.
+
+ * Sadece rakamlar, harfler ve alt çizgi lütfen.
+
+ */
+
+$table_prefix = 'wp_';
+
+
+/**
+
+ * Geliştiriciler için: WordPress hata ayıklama modu.
+
+ *
+
+ * Bu değeri "true" yaparak geliştirme sırasında hataların ekrana basılmasını sağlayabilirsiniz.
+
+ * Tema ve eklenti geliştiricilerinin geliştirme aşamasında WP_DEBUG
+
+ * kullanmalarını önemle tavsiye ederiz.
+
+ * 
+
+ * Hata ayıklama için kullanabilecek diğer sabitler ile ilgili daha fazla bilgiyi
+
+ * belgelerden edinebilirsiniz.
+
+ * 
+
+ * @link https://wordpress.org/support/article/debugging-in-wordpress/
+
+ */
+
+define( 'WP_DEBUG', false );
+
+
+/* Hepsi bu kadar. Mutlu bloglamalar! */
+
+
+/** WordPress dizini için mutlak yol. */
+
+if ( ! defined( 'ABSPATH' ) ) {
+
+    define( 'ABSPATH', __DIR__ . '/' );
+
+}
+
+
+/** WordPress değişkenlerini ve yollarını kurar. */
+
+require_once ABSPATH . 'wp-settings.php';
